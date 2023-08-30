@@ -1,22 +1,25 @@
-import { Card, CardBody, CardFooter, CardHeader, SimpleGrid, Text } from '@chakra-ui/react'
+import { Card, CardBody, CardFooter, CardHeader, Img, SimpleGrid, Text } from '@chakra-ui/react'
 import React from 'react'
 
-export default function MovieCard() {
+const MovieCard = ({movie1}) => {
   return (
     <SimpleGrid spacing={10} minChildWidth="300px">
         <Card color="white">
            <CardHeader>
-            <Text>Card Header</Text>
+            <Text>{movie1.Year}</Text>
            </CardHeader>
 
            <CardBody>
-            <Text>Card body</Text>
+            <Img src={movie1.Poster !== 'N/A' ? movie1.Poster : 'https//via.placeholder.com/400'}></Img>
            </CardBody>
 
            <CardFooter>
-           <Text>Card footer</Text>
+           <Text>{movie1.Type}</Text>
+           <Text>{movie1.Title}</Text>
            </CardFooter>   
         </Card>
     </SimpleGrid>
   )
 }
+
+export default MovieCard;

@@ -1,21 +1,21 @@
 import { Card, CardBody, CardFooter, CardHeader, Img, SimpleGrid, Text } from '@chakra-ui/react'
 import React from 'react'
 
-const MovieCard = ({movie1}) => {
+const MovieCard = ({movie}) => {
   return (
     <SimpleGrid spacing={10} minChildWidth="300px">
         <Card color="white">
            <CardHeader>
-            <Text>{movie1.Year}</Text>
+            <Text>{movie.Year}</Text>
            </CardHeader>
 
            <CardBody>
-            <Img src={movie1.Poster !== 'N/A' ? movie1.Poster : 'https//via.placeholder.com/400'}></Img>
+            <Img src={movie.Poster !== 'N/A' ? movie.Poster : 'https//via.placeholder.com/400'}></Img>
            </CardBody>
 
            <CardFooter>
-           <Text>{movie1.Type}</Text>
-           <Text>{movie1.Title}</Text>
+           <Text>{movie.Type}</Text>
+           <Text>{movie.Title}</Text>
            </CardFooter>   
         </Card>
     </SimpleGrid>

@@ -1,25 +1,29 @@
-import { Card, CardBody, CardFooter, CardHeader, Img, SimpleGrid, Text } from '@chakra-ui/react'
-import React from 'react'
+import React from 'react';
+import { Box, Card, CardBody, CardFooter, CardHeader, Image, SimpleGrid, Text } from '@chakra-ui/react';
 
-const MovieCard = ({movie}) => {
+const MovieCard = ({ movie }) => {
   return (
-    <SimpleGrid spacing={10} minChildWidth="300px">
-        <Card color="white">
-           <CardHeader>
-            <Text>{movie.Year}</Text>
-           </CardHeader>
+    <Box maxW="sm">
+      <Card color="white" maxW="100%" h="100%" w="100%" borderRadius="lg" overflow="hidden" _hover={{ boxShadow: 'lg' }}>
+        <CardHeader>
+          <Text>{movie.Year}</Text>
+        </CardHeader>
 
-           <CardBody>
-            <Img src={movie.Poster !== 'N/A' ? movie.Poster : 'https//via.placeholder.com/400'}></Img>
-           </CardBody>
+        <CardBody>
+          <Image
+            src={movie.Poster !== 'N/A' ? movie.Poster : 'https://via.placeholder.com/400'}
+            alt={movie.Title}
+            maxH="300px" // Reduce the image size as needed
+          />
+        </CardBody>
 
-           <CardFooter>
-           <Text>{movie.Type}</Text>
-           <Text>{movie.Title}</Text>
-           </CardFooter>   
-        </Card>
-    </SimpleGrid>
-  )
-}
+        <CardFooter>
+          <Text>{movie.Type}</Text>
+          <Text>{movie.Title}</Text>
+        </CardFooter>
+      </Card>
+    </Box>
+  );
+};
 
 export default MovieCard;

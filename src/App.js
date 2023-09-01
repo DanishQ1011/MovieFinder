@@ -5,8 +5,9 @@ import { Container, Heading, Center } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 
 function App() {
-  const API_KEY = 'db9b2282'; // Your OMDb API key
+  const API_KEY = 'db9b2282'; // OMDb API key
   const API_URL = `https://www.omdbapi.com/?apikey=${API_KEY}`;
+  
 
   const [searchTerm, setSearchTerm] = useState('');
   const [movies, setMovies] = useState([]);
@@ -57,8 +58,10 @@ function App() {
               name="q"
               placeholder="Search..."
               value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
               onKeyDown={handleKeyPress}
+              onChange={(e) => { 
+                setSearchTerm(e.target.value);
+              }}
             />
             <button
               className="search-button"

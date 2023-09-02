@@ -44,8 +44,6 @@ function App() {
 
   return (
     <>
-      <ParticleBg />
-
       <Container alignItems="center">
         <Heading fontSize="45px" textAlign="center" color="orange" mt="50px">
           Movie Finder

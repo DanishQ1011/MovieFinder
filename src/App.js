@@ -1,7 +1,7 @@
 import './App.css';
 import ParticleBg from './components/ParticleBg';
 import MovieCard from './components/MovieCard';
-import { Container, Heading, Center } from '@chakra-ui/react';
+import { Container, Heading, Center, Grid } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 
 function App() {
@@ -84,11 +84,11 @@ function App() {
         </div>
       ) : (
         movies.length > 0 && (
-          <Container>
+          <Grid templateColumns='repeat(4, 1fr)' gap={6}>
             {movies.map((movie, index) => (
               <MovieCard key={index} movie={movie} />
             ))}
-          </Container>
+          </Grid>
         )
       )}
     </>

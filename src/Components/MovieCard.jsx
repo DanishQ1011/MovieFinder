@@ -1,10 +1,9 @@
 import React from 'react';
-import { Box, Card, CardBody, CardFooter, CardHeader, Image, SimpleGrid, Text } from '@chakra-ui/react';
+import {Card, CardBody, CardFooter, CardHeader, Image, Text } from '@chakra-ui/react';
 
 const MovieCard = ({ movie }) => {
   return (
-    <Box maxW="sm">
-      <Card color="white" maxW="100%" h="100%" w="100%" borderRadius="lg" overflow="hidden" _hover={{ boxShadow: 'lg' }}>
+      <Card color="white" bg="orange.400" my="30px" p="20px" maxW="100%" h="100%" w="100%" borderRadius="lg" overflow="hidden" _hover={{ boxShadow: 'lg' }}>
         <CardHeader>
           <Text>{movie.Year}</Text>
         </CardHeader>
@@ -17,12 +16,11 @@ const MovieCard = ({ movie }) => {
           />
         </CardBody>
 
-        <CardFooter>
-          <Text>{movie.Type}</Text>
+        <CardFooter className='cardbottom'>
+          <span>{movie.Type}</span>
           <Text>{movie.Title}</Text>
         </CardFooter>
       </Card>
-    </Box>
   );
 };
 

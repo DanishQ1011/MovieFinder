@@ -5,7 +5,6 @@ import { Container, Heading, Center, Grid } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 
 function App() {
-  const API_KEY = 'db9b2282'; // OMDb API key
   const API_URL = `https://www.omdbapi.com/?apikey=${API_KEY}`;
   
 
